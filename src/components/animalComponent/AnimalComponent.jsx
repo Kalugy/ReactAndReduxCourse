@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import "./styles.css";
 
-const ProfileCard = ({title, handle, img}) => {
+const ProfileCard = ({animal}) => {
   
     return (
         <div className="flex flex-col min-h-lg rounded-lg text-white bg-transparent shadow relative group">
