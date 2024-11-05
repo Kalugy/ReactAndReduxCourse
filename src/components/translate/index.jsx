@@ -4,7 +4,7 @@ import Translate from "./Translate";
 import Languages from "./Languages";
 //import "./styles.css";
 
-const App = () => {
+const Index = () => {
     const [languages, setLanguage] = useState("es");
     const [text, setText] = useState();
   
@@ -20,4 +20,4 @@ const App = () => {
 
 }
 
-export default App
+export default Index

@@ -3,6 +3,8 @@ import Navbar from './Navbar'
 import Home from './Home'
 import About from './About'
 import Translate from './components/translate/index'
+import ProfileCard from './components/profileCard/index';
+import Animal from './components/animalComponent/index';
 
 const App = () => {
 
@@ -14,6 +16,9 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/translate" element={<Translate/>} />
+        <Route path="/profilecard" element={<ProfileCard/>} />
+        <Route path="/animal" element={<Animal/>} />
+
       </Routes>
     </Router>
   )

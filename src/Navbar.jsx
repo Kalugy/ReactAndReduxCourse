@@ -7,11 +7,14 @@ function Navbar() {
       <NavLink to='/' className='mx-2'>
         Home
       </NavLink>
-      <NavLink to='/about' className='mx-2'>
-        About
-      </NavLink>
       <NavLink to='/translate' className='mx-2'>
         Translate
+      </NavLink>
+      <NavLink to='/profilecard' className='mx-2'>
+        Profile Card
+      </NavLink>
+      <NavLink to='/animal' className='mx-2'>
+        Animal app
       </NavLink>
     </nav>
   )
