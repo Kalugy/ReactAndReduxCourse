@@ -16,6 +16,9 @@ function Navbar() {
       <NavLink to='/animal' className='mx-2'>
         Animal app
       </NavLink>
+      <NavLink to='/searchimg' className='mx-2'>
+        Search Img
+      </NavLink>
     </nav>
   )
 }

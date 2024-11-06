@@ -5,7 +5,7 @@ import About from './About'
 import Translate from './components/translate/index'
 import ProfileCard from './components/profileCard/index';
 import Animal from './components/animalComponent/index';
-
+import SearchImg from './components/searchImg/index';
 const App = () => {
 
   return (
@@ -18,6 +18,7 @@ const App = () => {
         <Route path="/translate" element={<Translate/>} />
         <Route path="/profilecard" element={<ProfileCard/>} />
         <Route path="/animal" element={<Animal/>} />
+        <Route path="/searchimg" element={<SearchImg/>} />
 
       </Routes>
     </Router>
