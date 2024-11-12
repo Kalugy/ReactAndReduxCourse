@@ -1,36 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddBook from "./AddBook";
 import ReadingList from "./ReadingList";
 import { fetchImages } from "../../api/api"
+import { getBooks, createBook, updateBook, deleteBook } from "../../api/book"
 
 const App = () => {
     const [book, setBook] = useState([])
     const [text, setText] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
         CreateBook();
     }
+
+    const getNewBooks = async () => {
+        const books = await getBooks();
+        setBook(books);
+    };
+
+    useEffect(() => {
+        getNewBooks();
+    }, []);
+
     const CreateBook = async () => {
         const data = await fetchImages(text);
-        console.log(data,'dasdasdas')
         const newBook = {
+            id: Date.now().toString(),
             name: text,
             image: data.results[0].urls.small
         }
-        setBook([...book, newBook])
+        const newBooks = await createBook(newBook);
+        setBook([...book, newBooks])
         setText('')
     }
 
-    const handleDelete = (bookD) => {
+    const handleDelete = async (bookD) => {
+        await deleteBook(bookD)
         const newBooks = book.filter(b => b.name != bookD.name)
         setBook(newBooks)
     }
 
-    const handleNewEdit = (newName, lastName) => {
+    const handleNewEdit = async (editBook, newName) => {
+        const edit = await updateBook(editBook, { "name" : newName });
         const newBooks = book.map( b =>{
-            if(b.name === lastName){
-                b.name=newName
+            if(b.id === editBook.id){
+                return {...b, ...edit}
             }
             return b
         })
@@ -38,7 +51,6 @@ const App = () => {
         setBook(newBooks)
     }
 
-    console.log(book)
     return (
         <div className="min-h-screen bg-slate-800 text-white flex flex-col justify-center ">
             <AddBook handleSubmit={handleSubmit} text={text} setText={setText}/>

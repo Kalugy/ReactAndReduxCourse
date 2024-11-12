@@ -29,46 +29,50 @@ const BookCard = ({book, handleDelete, handleNewEdit}) => {
     }
 
     return (
-        <div className="bg-slate-500 flex flex-col min-w-28 min-h-28 border-gray-500 border-2 rounded shadow">
-            <div className="flex justify-end text-right gap-2">
-                <div className="cursor-pointer text-blue-400 hover:text-gray-100"
-                    onClick={() => setEdit(!edit)}
-                >
-                    <EditIcon
-                    size={13}
-                    />
-                </div>
-                <div className="cursor-pointer text-red-400 hover:text-gray-100"
-                    onClick={() => handleDelete(book)}
-                >
-                    <DeleteIcon
-                    size={13}
-                    />
-                </div>
-            </div>
-            {edit && 
-            <div className="flex flex-col">
-                <label className="p-2 font-bold">Name</label>
-                <input 
-                    className="text-black input" 
-                    value={bookN}
-                    onChange={(e)=>handleEdit(e.target.value)}
-                />   
-                {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
-                <button
-                    className="primary min-w-8" 
-                    onClick={()=>{setEdit(!edit);handleNewEdit(bookN,book.name)}}>Save</button>
-            </div>
-            }
-            {!edit && 
-                <div className="text-white p-5">
-                    <img className="w-26 h-28 rounded py-2" src={book.image} alt="photo" />
-                    <h4 className="font-bold">Name</h4>
-                    <h5 className="font-semibold">{book.name}</h5>
-                </div> 
-            }
-            
+        <div className="bg-slate-600 flex flex-col w-60 min-h-28 p-4 border-gray-600 border rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+    <div className="flex justify-end gap-3 mb-2">
+        {/* Edit Icon */}
+        <div 
+            className="cursor-pointer text-blue-400 hover:text-blue-200 transition-colors"
+            onClick={() => setEdit(!edit)}
+        >
+            <EditIcon size={16} />
         </div>
+        
+        {/* Delete Icon */}
+        <div 
+            className="cursor-pointer text-red-400 hover:text-red-200 transition-colors"
+            onClick={() => handleDelete(book)}
+        >
+            <DeleteIcon size={16} />
+        </div>
+    </div>
+    
+    {edit ? (
+        <div className="flex flex-col space-y-3">
+            <label className="text-sm font-bold text-gray-200">Name</label>
+            <input 
+                className="text-gray-800 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                value={bookN}
+                onChange={(e) => handleEdit(e.target.value)}
+            />
+            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+            <button
+                className="bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                onClick={() => { setEdit(!edit); handleNewEdit(book, bookN); }}
+            >
+                Save
+            </button>
+        </div>
+    ) : (
+        <div className="text-white space-y-3">
+            <img className="w-32 h-32 object-cover rounded-lg mx-auto shadow-md" src={book.image} alt="photo" />
+            <h4 className="text-lg font-bold text-gray-300">Name</h4>
+            <h5 className="font-semibold text-gray-100">{book.name}</h5>
+        </div>
+    )}
+</div>
+
     )
 
 }

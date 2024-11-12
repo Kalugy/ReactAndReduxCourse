@@ -3,7 +3,7 @@ export const isRequired = (value) => {
 };
 
 export const validateLetters = (value) => {
-  const lettersRegex = /^[A-Za-z]+$/;
+  const lettersRegex = /^[A-Za-z ]+$/;
   return lettersRegex.test(value)
 }
  

@@ -1,11 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 
+import { isRequired, validateLetters } from '../../utils/validations';
 
 const AddBook = ({handleSubmit,text, setText}) => {
 
-    
-    const validate = (e) => {
-        setText(e)
+    const [errors, setErrors] = useState({});
+
+    const validate = (name) => {
+        const newErrors = {};
+
+        if (!isRequired(name)) {
+            newErrors.name = 'Name is required';
+        }
+        if (!validateLetters(name)) {
+            newErrors.validateLetters = 'Only letters is required';
+        }
+
+        setErrors(newErrors);
+        if (Object.keys(newErrors).length === 0){
+            setText(name)
+        }
     }
 
     return (
@@ -21,6 +35,7 @@ const AddBook = ({handleSubmit,text, setText}) => {
                     value={text} 
                     onChange={(e)=>validate(e.target.value)}
                 />
+                {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
                 <button className="primary max-w-20">Submit</button>
             </form>
         </div>
