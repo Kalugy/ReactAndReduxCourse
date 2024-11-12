@@ -1,10 +1,15 @@
 import React from "react";
-import Heart from "../../assets/svg/heart";
 
-const SearchImg = ({animal, Increase}) => {  
+const SearchImg = ({setText, handleKeyDown}) => {  
     return (
-        <div className="flex gap-5 flex-wrap max-w-full rounded-lg text-white bg-transparent  overflow-y-auto">
-            fsd
+        <div className="max-w-lg flex flex-col gap-4 mx-auto">
+            <label>Search a name and Enter</label>
+            <input 
+                type="text" 
+                className="text-black rounded"
+                onChange={(e)=> setText(e.target.value)}
+                onKeyDown={handleKeyDown}
+            />
         </div>
     )
 }

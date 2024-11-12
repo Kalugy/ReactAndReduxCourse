@@ -19,6 +19,9 @@ function Navbar() {
       <NavLink to='/searchimg' className='mx-2'>
         Search Img
       </NavLink>
+      <NavLink to='/book' className='mx-2'>
+        Books Store
+      </NavLink>
     </nav>
   )
 }

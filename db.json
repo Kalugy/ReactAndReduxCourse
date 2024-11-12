@@ -1,0 +1,25 @@
+{
+  "book": [
+    {
+      "name": "tesdddt",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "another title",
+      "img": "url"
+    },
+    {
+      "id": "3",
+      "name": "test"
+    },
+    {
+      "id": "4",
+      "name": "tesddddt"
+    },
+    {
+      "id": "5",
+      "name": "tesdddt"
+    }
+  ]
+}

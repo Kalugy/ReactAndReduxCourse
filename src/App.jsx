@@ -6,6 +6,8 @@ import Translate from './components/translate/index'
 import ProfileCard from './components/profileCard/index';
 import Animal from './components/animalComponent/index';
 import SearchImg from './components/searchImg/index';
+import Book from './components/Book/index';
+
 const App = () => {
 
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/profilecard" element={<ProfileCard/>} />
         <Route path="/animal" element={<Animal/>} />
         <Route path="/searchimg" element={<SearchImg/>} />
+        <Route path="/book" element={<Book/>} />
+
 
       </Routes>
     </Router>

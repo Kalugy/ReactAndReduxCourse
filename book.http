@@ -1,0 +1,26 @@
+GET http://localhost:3000/book/1 HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/book HTTP/1.1
+Content-Type: application/json
+
+###
+POST http://localhost:3000/book HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "tesdddt"
+}
+###
+PUT http://localhost:3000/book/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "tesdddt"
+}
+###
+DELETE  http://localhost:3000/book/1 HTTP/1.1
+Content-Type: application/json
+
