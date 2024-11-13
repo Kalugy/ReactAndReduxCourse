@@ -22,6 +22,9 @@ function Navbar() {
       <NavLink to='/book' className='mx-2'>
         Books Store
       </NavLink>
+      <NavLink to='/bookcontext' className='mx-2'>
+        Books Context
+      </NavLink>
     </nav>
   )
 }

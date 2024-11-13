@@ -8,6 +8,8 @@ import Animal from './components/animalComponent/index';
 import SearchImg from './components/searchImg/index';
 import Book from './components/Book/index';
 
+import BookContext from './components/BookContext/index';
+
 const App = () => {
 
   return (
@@ -22,6 +24,7 @@ const App = () => {
         <Route path="/animal" element={<Animal/>} />
         <Route path="/searchimg" element={<SearchImg/>} />
         <Route path="/book" element={<Book/>} />
+        <Route path="/bookcontext" element={<BookContext/>} />
 
 
       </Routes>
