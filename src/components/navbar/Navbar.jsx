@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom"
 
+import Dropdown from "../dropdown/index"
+
 function Navbar() {
 
   return (
@@ -24,6 +26,9 @@ function Navbar() {
       </NavLink>
       <NavLink to='/bookcontext' className='mx-2'>
         Books Context
+      </NavLink>
+      <NavLink to='/dropdown' className='mx-2'>
+        <Dropdown />
       </NavLink>
     </nav>
   )
