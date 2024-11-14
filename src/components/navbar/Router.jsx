@@ -14,6 +14,7 @@ import Tables from '../dropdown/Tables';
 import Flex from '../dropdown/Flex';
 import Search from '../dropdown/Search';
 import Select from '../dropdown/Select';
+import CustomNav from '../customNav/CustomNav';
 
 const App = () => {
 
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/dropdown/table" element={<Tables/>} />
         <Route path="/dropdown/search" element={<Search/>} />
         <Route path="/dropdown/select" element={<Select/>} />
+        <Route path="/customnav" element={<CustomNav/>} />
 
 
       </Routes>

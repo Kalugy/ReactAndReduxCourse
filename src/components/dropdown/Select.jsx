@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Panel from "./Panel";
+
 
 const Select = () => {
     const option = [
@@ -26,28 +28,48 @@ const Select = () => {
 const CustomSelect = ({option, onChange, value}) => {
 
     const [isOpen, setIsOpen] = useState(false)
+    const divEl = useRef()
+
+    useEffect(()=>{
+
+        if(!divEl.current){
+            return;
+        }
+
+        const handler = (event) => {
+            if(!divEl.current.contains(event.target)){
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener('click', handler, true);
+
+        return () => {
+            document.removeEventListener('click', handler)
+        }
+    },[])
 
     return (
-        <div className="">
-            <div 
-                className="bg-slate-600 px-5 py-2 min-w-18 font-semibold text-sm rounded" 
+        <div ref={divEl} className="">
+            <Panel 
+                className="bg-slate-700 min-w-18 cursor-pointer font-semibold text-sm" 
                 onClick={ () => setIsOpen(!isOpen)}
             >
                 {value || 'Select...'}
-            </div>
+            </Panel>
             {isOpen && 
                 <div
                     className="absolute"
                 >
                     {option.map(option => {
                         return (
-                            <div 
-                                className="bg-slate-500 px-5 py-2 font-semibold text-sm cursor-pointer hover:bg-slate-300"
+                            <Panel 
+                                className="bg-slate-500 font-semibold text-sm cursor-pointer hover:bg-slate-300"
                                 onClick={() => {onChange(option.value);setIsOpen(!isOpen)  }}
                                 key={option.value}
                             >
                                 {option.label}
-                            </div>
+                            </Panel>
                     )
                 })}
                 </div>

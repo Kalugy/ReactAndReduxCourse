@@ -27,6 +27,9 @@ function Navbar() {
       <NavLink to='/bookcontext' className='mx-2'>
         Books Context
       </NavLink>
+      <NavLink to='/customnav' className='mx-2'>
+        CustomNav
+      </NavLink>
       <NavLink to='/dropdown' className='mx-2'>
         <Dropdown />
       </NavLink>
