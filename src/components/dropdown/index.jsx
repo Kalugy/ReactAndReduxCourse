@@ -64,6 +64,11 @@ const Dropdown = () => {
                 </NavLink>
               </li>
               <li className="hover:bg-gray-100">
+                <NavLink to='/dropdown/sortedtable' className='block px-4 py-2 text-sm text-gray-700'>
+                    Sorted Tables 
+                </NavLink>
+              </li>
+              <li className="hover:bg-gray-100">
                 <NavLink to='/dropdown/search' className='block px-4 py-2 text-sm text-gray-700'>
                     Search 
                 </NavLink>
@@ -71,6 +76,16 @@ const Dropdown = () => {
               <li className="hover:bg-gray-100">
                 <NavLink to='/dropdown/select' className='block px-4 py-2 text-sm text-gray-700'>
                     Select 
+                </NavLink>
+              </li>
+              <li className="hover:bg-gray-100">
+                <NavLink to='/dropdown/modal' className='block px-4 py-2 text-sm text-gray-700'>
+                    Modal 
+                </NavLink>
+              </li>
+              <li className="hover:bg-gray-100">
+                <NavLink to='/dropdown/modalportal' className='block px-4 py-2 text-sm text-gray-700'>
+                  Modal Portal 
                 </NavLink>
               </li>
             </ul>

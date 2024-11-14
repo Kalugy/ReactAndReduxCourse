@@ -14,8 +14,10 @@ import Tables from '../dropdown/Tables';
 import Flex from '../dropdown/Flex';
 import Search from '../dropdown/Search';
 import Select from '../dropdown/Select';
+import Modal from '../dropdown/Modal';
 import CustomNav from '../customNav/CustomNav';
-
+import ModalPortal from '../dropdown/ModalPortal';
+import SortableTable from '../dropdown/TablesSort ';
 const App = () => {
 
   return (
@@ -37,6 +39,10 @@ const App = () => {
         <Route path="/dropdown/table" element={<Tables/>} />
         <Route path="/dropdown/search" element={<Search/>} />
         <Route path="/dropdown/select" element={<Select/>} />
+        <Route path="/dropdown/modal" element={<Modal/>} />
+        <Route path="/dropdown/modalportal" element={<ModalPortal/>} />
+        <Route path="/dropdown/sortedtable" element={<SortableTable/>} />
+
         <Route path="/customnav" element={<CustomNav/>} />
 
 
