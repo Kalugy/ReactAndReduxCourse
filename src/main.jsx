@@ -3,11 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BookProvider } from './context/Books.jsx'
+import {store} from './store'
+import { Provider } from 'react-redux'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Provider store={store}>
     <BookProvider>
       <App />
     </BookProvider>
+    </Provider>
   </StrictMode>,
 )

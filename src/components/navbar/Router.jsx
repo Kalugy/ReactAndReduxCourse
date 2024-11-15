@@ -20,7 +20,7 @@ import ModalPortal from '../dropdown/ModalPortal';
 import SortableTable from '../dropdown/TablesSort ';
 import Increment from '../dropdown/Increment';
 import IncrementReducer from '../dropdown/IncrementReducer';
-
+import MovieRedux from '../movieRedux/index'
 const App = () => {
 
   return (
@@ -47,11 +47,8 @@ const App = () => {
         <Route path="/dropdown/sortedtable" element={<SortableTable/>} />
         <Route path="/dropdown/increment" element={<Increment/>} />
         <Route path="/dropdown/incrementreducer" element={<IncrementReducer/>} />
-
-
         <Route path="/customnav" element={<CustomNav/>} />
-
-
+        <Route path="/movieredux" element={<MovieRedux/>} />
       </Routes>
     </Router>
   )
