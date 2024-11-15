@@ -12,7 +12,7 @@ function SongPlaylist() {
     // To Do:
     // Add song to list of songs
     const action = addSong(song)
-    console.log(action)
+    dispatch(action)
   };
   const handleSongRemove = (song) => {
     // To Do:
