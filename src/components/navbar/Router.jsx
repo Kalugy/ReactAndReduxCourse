@@ -18,6 +18,9 @@ import Modal from '../dropdown/Modal';
 import CustomNav from '../customNav/CustomNav';
 import ModalPortal from '../dropdown/ModalPortal';
 import SortableTable from '../dropdown/TablesSort ';
+import Increment from '../dropdown/Increment';
+import IncrementReducer from '../dropdown/IncrementReducer';
+
 const App = () => {
 
   return (
@@ -42,6 +45,9 @@ const App = () => {
         <Route path="/dropdown/modal" element={<Modal/>} />
         <Route path="/dropdown/modalportal" element={<ModalPortal/>} />
         <Route path="/dropdown/sortedtable" element={<SortableTable/>} />
+        <Route path="/dropdown/increment" element={<Increment/>} />
+        <Route path="/dropdown/incrementreducer" element={<IncrementReducer/>} />
+
 
         <Route path="/customnav" element={<CustomNav/>} />
 
