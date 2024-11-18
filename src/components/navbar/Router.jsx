@@ -21,6 +21,8 @@ import SortableTable from '../dropdown/TablesSort ';
 import Increment from '../dropdown/Increment';
 import IncrementReducer from '../dropdown/IncrementReducer';
 import MovieRedux from '../movieRedux/index'
+import CarRedux from '../carRedux/carRedux';
+
 const App = () => {
 
   return (
@@ -49,6 +51,7 @@ const App = () => {
         <Route path="/dropdown/incrementreducer" element={<IncrementReducer/>} />
         <Route path="/customnav" element={<CustomNav/>} />
         <Route path="/movieredux" element={<MovieRedux/>} />
+        <Route path="/carredux" element={<CarRedux/>} />
       </Routes>
     </Router>
   )

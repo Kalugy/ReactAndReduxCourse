@@ -34,7 +34,10 @@ function Navbar() {
         <Dropdown />
       </NavLink>
       <NavLink to='/movieredux' className='mx-2'>
-        AppRedux
+        MoviesRedux
+      </NavLink>
+      <NavLink to='/carredux' className='mx-2'>
+        CarRedux
       </NavLink>
     </nav>
   )
