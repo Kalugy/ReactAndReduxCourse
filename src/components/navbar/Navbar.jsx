@@ -39,6 +39,9 @@ function Navbar() {
       <NavLink to='/carredux' className='mx-2'>
         CarRedux
       </NavLink>
+      <NavLink to='/carreduxv2' className='mx-2'>
+        CarRedux2
+      </NavLink>
     </nav>
   )
 }

@@ -22,6 +22,7 @@ import Increment from '../dropdown/Increment';
 import IncrementReducer from '../dropdown/IncrementReducer';
 import MovieRedux from '../movieRedux/index'
 import CarRedux from '../carRedux/carRedux';
+import CarRedux2 from '../carRedux2/carRedux2';
 
 const App = () => {
 
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/customnav" element={<CustomNav/>} />
         <Route path="/movieredux" element={<MovieRedux/>} />
         <Route path="/carredux" element={<CarRedux/>} />
+        <Route path="/carreduxv2" element={<CarRedux2/>} />
       </Routes>
     </Router>
   )
