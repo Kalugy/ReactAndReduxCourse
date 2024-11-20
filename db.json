@@ -15,5 +15,37 @@
       "name": "dogs",
       "image": "https://images.unsplash.com/photo-1601758174493-45d0a4d3e407?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNTAyMDJ8MHwxfHNlYXJjaHwxfHxkb2dzfGVufDB8fHx8MTczMTQ1NDg0MXww&ixlib=rb-4.0.3&q=80&w=400"
     }
+  ],
+  "user": [
+    {
+      "id": "370c0bf4-7580-49fc-8986-854fc2b3ee09",
+      "name": "Max.Dietrich32"
+    },
+    {
+      "id": "a05fbcfd-5683-4475-8653-e94f0270554d",
+      "name": "Cicero29"
+    },
+    {
+      "id": "554c6a0a-ec8c-4d0b-a347-8a1d13de11ac",
+      "name": "Vicenta_Raynor29"
+    },
+    {
+      "id": "a4a1b84e-b163-45b6-9407-067531b74926",
+      "name": "Tillman_Rice41"
+    }
+  ],
+  "album": [
+    {
+      "id": "6570420b-bfd8-493d-888f-9d1154d04a10",
+      "title": "I Shot the Sheriff",
+      "images": [],
+      "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
+    },
+    {
+      "id": "2e7764db-9588-4ab4-942c-ef264da094a6",
+      "title": "(It's No) Sin",
+      "images": [],
+      "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
+    }
   ]
 }
