@@ -4,11 +4,16 @@ import { useEffect, useState } from "react";
 import { createSelector } from "@reduxjs/toolkit";
 
 const memoizedCars = createSelector(
-  [(state) => state.cars2.cars, (state) => state.cars2.searchTerm],
-  (cars, searchTerm) =>
-    cars.filter((car) =>
+  [(state) => state.cars2.cars, (state) => state.cars2.searchTerm,(state) => state.form.name],
+  (cars, searchTerm, name) =>{
+    const newCar = cars.filter((car) =>
       car.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
+    return {
+      listCar: newCar,
+      name: name
+    }
+  }
 );
 
 const CarTable = () => {
@@ -17,7 +22,7 @@ const CarTable = () => {
   // const listCar = useSelector((state) => {
   //   return state.cars2.cars
   // })
-  const listCar = useSelector(memoizedCars);
+  const { listCar, name } = useSelector(memoizedCars);
 
 
   const handleDelete = ( id ) => {
@@ -39,8 +44,10 @@ const CarTable = () => {
 
           {listCar?.length > 0 && 
             listCar.map((car) => {
+              const bold = name && car.name.toLowerCase().includes(name.toLowerCase())
+
               return (
-                <tr key={car.id}>
+                <tr key={car.id} className={bold && 'font-bold bg-slate-400'}>
                   <td>{car.name}</td>
                   <td>$ {car.cost}</td>
                   <th>
