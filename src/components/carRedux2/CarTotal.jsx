@@ -4,8 +4,7 @@ import { useSelector } from "react-redux"
 const CarTotal = () => {
   const total = useSelector (({ cars2: { cars, searchTerm } }) => {
     const filteredCard = cars.filter((car) => car.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    const costRelative = 0
-    const totalCost = filteredCard.reduce((increment ,car ) => parseInt(car.cost) + increment, costRelative )
+    const totalCost = filteredCard.reduce((increment ,car ) => parseInt(car.cost) + increment, 0 )
     return totalCost
   })
  
