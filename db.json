@@ -35,17 +35,5 @@
     }
   ],
   "album": [
-    {
-      "id": "6570420b-bfd8-493d-888f-9d1154d04a10",
-      "title": "I Shot the Sheriff",
-      "images": [],
-      "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
-    },
-    {
-      "id": "2e7764db-9588-4ab4-942c-ef264da094a6",
-      "title": "(It's No) Sin",
-      "images": [],
-      "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
-    }
   ]
 }
