@@ -15,9 +15,12 @@ const UsersSlice = createSlice({
         },
         createAlbum(state,action){
             state.album = action.payload
-        }
+        },
+        setAlbum(state,action){
+            state.album = action.payload
+        },
     }
 })
 
-export const { createUser, setUser, createAlbum } = UsersSlice.actions
+export const { createUser, setUser, createAlbum, setAlbum } = UsersSlice.actions
 export const userReducer = UsersSlice.reducer

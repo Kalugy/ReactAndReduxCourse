@@ -5,7 +5,9 @@ import { addCar, carsReducer, removeCar } from "./slices/CarsSlice";
 import { car2Reducer, addNewCar, removeNewCar, changeSearchTerm } from "./slices/carExample/carsSlice";
 import { formReducer, changeName, changeCost } from "./slices/carExample/formSlice";
 import { resetAll } from "./action";
-import { createUser, userReducer, setUser, createAlbum } from "./slices/UserSlice";
+import { createUser, userReducer, setUser, createAlbum, setAlbum } from "./slices/UserSlice";
+import { usersReducer, addUser } from "./slices/userExample/UsersSlice";
+
 
 const store = configureStore({
     reducer:{
@@ -14,7 +16,8 @@ const store = configureStore({
         cars: carsReducer,
         cars2: car2Reducer,
         form: formReducer,
-        users: userReducer
+        users: userReducer,
+        usersexample: usersReducer
     }
 })
 
@@ -28,4 +31,5 @@ export { addCar, removeCar }
 export { addNewCar, removeNewCar, changeSearchTerm }
 export { changeName, changeCost }
 export { resetAll }
-export { createUser , setUser, createAlbum}
+export { createUser , setUser, createAlbum, setAlbum}
+export { addUser }

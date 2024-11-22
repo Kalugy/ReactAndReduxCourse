@@ -5,56 +5,69 @@ import { createAlbum } from "../../store"
 import { useDispatch } from "react-redux"
 import { faker } from "@faker-js/faker"
 
-const postAlbum = async (newAlbum) => {
-    const response = await axios.post('http://localhost:3000/album', newAlbum)
+const updateAlbum = async (id, newArray) => {
+    const response = await axios.patch(`http://localhost:3000/album/${id}`, newArray)
     return response.data
 }
 
-const DropdownAlbum = ({album}) => {
-    const dispatch = useDispatch()
+
+const deleteAlbum = async (id) => {
+    const response = await axios.delete(`http://localhost:3000/album/${id}`)
+    return response.data
+}
+
+const DropdownAlbum = ({album, setAlbum}) => {
     const [isOpen, setIsOpen ] = useState(false)
 
     const handleDropdown = () => {
-        
         setIsOpen(!isOpen)
     }
 
-    // const handleAddAlbum = async (userId) => {
-    //     const newAlbum = {
-    //         id: faker.string.uuid(),
-    //         title: faker.music.songName(),
-    //         images: [],
-    //         userId: userId
-    //     }
-    //     const response = await postAlbum(newAlbum)
-    //     dispatch(createAlbum(newAlbum))
-        
-    // }
-
-    // const getAlbums = async () =>{ 
-    //     const albums = await axios.get('http://localhost:3000/album')
-    //     //dispatch(setUser(users.data))
-    // }
-
-    // useEffect(()=>{
-    //     getAlbums()
-    // },[])
+    const handleAddImage = async () => {
+        const image = faker.image.avatar()
+        const newArray = album.images
+        newArray.push(image)
+        const response = await updateAlbum(album.id, { images: newArray})
+        setAlbum()        
+    }
+    const handleDelete = async () => {
+        const response = await deleteAlbum(album.id)
+        setAlbum()
+    }
 
     return (
         <div className="flex flex-col w-full justify-center items-center align-middle" >
-            <div onClick={handleDropdown} className="flex w-10/12 justify-between mt-5 px-5 md:mx-30 bg-slate-400 rounded shadow hover:bg-slate-500">
-            {/* <div className="flex gap-2 m-3 align-middle">
-                <button className="secondary p-1 m-1 font-bold">X</button>
-                <p className="text-sm md:text-lg font-semibold p-2">{user.name}</p>
-            </div> */}
-            {isOpen && <div className="flex items-center font-bold">{'>'}</div>}
-            {!isOpen && <div className="flex items-center font-bold">{'<'}</div>}
+            <div onClick={()=>handleDropdown()} className="flex w-10/12 justify-between mt-5 px-5 md:mx-30 bg-slate-400 rounded shadow hover:bg-slate-500">
+            <div className="flex gap-2 m-3 align-middle">
+                <button onClick={()=>handleDelete()} className="secondary p-1 m-1 font-bold">X</button>
+                <p className="text-sm md:text-lg font-semibold p-2">{album.title}</p>
+            </div>
+            <div className="flex items-center font-bold text-white">
+                <svg
+                    className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
             </div>
             {isOpen && 
-            <div className="flex w-10/12 justify-center ">
-                <div className="flex w-full justify-between p-5 md:px-36 gap-2 bg-slate-600">
-                {/* <h3 className="text-3xl font-bold ">Albums by {user.name}</h3> */}
-                {/* <button onClick={() => handleAddAlbum(user.id)} className="primary">+ Add Albums</button> */}
+            <div className="flex w-10/12 justify-center flex-col ">
+                <div className="flex flex-col w-full justify-between p-5 md:px-36 gap-2 bg-slate-600">
+                    <div className="flex w-full justify-between p-5 md:px-36 gap-2">
+                        <h3 className="text-3xl font-bold ">{album.title}</h3>
+                        <button onClick={() => handleAddImage()} className="primary">+ Add pictures</button>
+                    </div>
+                    <div className="flex gap-2 justify-center">
+                        {album.images.length > 0 && album.images.map((relativeValue, index) => {
+                            return(
+                                <img key={index} src={relativeValue} className="w-8 h-8"/>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>  
             }

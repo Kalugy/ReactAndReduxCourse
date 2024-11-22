@@ -24,16 +24,47 @@
     {
       "id": "a05fbcfd-5683-4475-8653-e94f0270554d",
       "name": "Cicero29"
-    },
-    {
-      "id": "554c6a0a-ec8c-4d0b-a347-8a1d13de11ac",
-      "name": "Vicenta_Raynor29"
-    },
-    {
-      "id": "a4a1b84e-b163-45b6-9407-067531b74926",
-      "name": "Tillman_Rice41"
     }
   ],
   "album": [
-  ]
+    {
+      "id": "ee137e53-4850-41c4-aa7f-49d42f3d87dd",
+      "title": "Do You Love Me?",
+      "images": [],
+      "userId": "a05fbcfd-5683-4475-8653-e94f0270554d"
+    },
+    {
+      "id": "860f367c-f49a-41ab-9324-697f06171d97",
+      "title": "Lonely Boy",
+      "images": [],
+      "userId": "a05fbcfd-5683-4475-8653-e94f0270554d"
+    },
+    {
+      "id": "30e0899a-a463-4db5-b47d-d2335fda8f80",
+      "title": "That's the Way (I Like It)",
+      "images": [
+        "https://avatars.githubusercontent.com/u/63956837",
+        "https://avatars.githubusercontent.com/u/59579655",
+        "https://avatars.githubusercontent.com/u/66445313",
+        "https://avatars.githubusercontent.com/u/51957600",
+        "https://avatars.githubusercontent.com/u/47596213",
+        "https://avatars.githubusercontent.com/u/62524681"
+      ],
+      "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
+    },
+    {
+      "id": "348c3bc6-b5e8-42e9-8671-cb5c4a3fe8fd",
+      "title": "I Can't Go For That (No Can Do)",
+      "images": [
+        "https://avatars.githubusercontent.com/u/20705462",
+        "https://avatars.githubusercontent.com/u/79775420",
+        "https://avatars.githubusercontent.com/u/1301479",
+        "https://avatars.githubusercontent.com/u/44434715"
+      ],
+      "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
+    }
+  ],
+  "users": [],
+  "albums": [],
+  "photos": []
 }

@@ -22,6 +22,7 @@ function UserRedux() {
     }
     dispatch(createUser(newUser))
     await postCreateNewUser(newUser)
+    //getUsers()
   }
 
   const getUsers = async () =>{ 
@@ -35,15 +36,16 @@ function UserRedux() {
 
   return (
     <div className="h-screen bg-gray-800 text-white flex flex-col items-center justify-center">
-      <div className="flex w-full justify-between px-5 md:px-36 gap-2">
+      <div className="flex w-full justify-between px-5 mt-20 md:px-36 gap-2">
         <h3 className="text-3xl font-bold ">Users</h3>
         <button onClick={()=> handleCreateUser()} className="primary">+ Add user</button>
       </div>
       {user.length > 0 && user.map((relativeUser) => {
         return(
-          <Dropdown key={relativeUser.id} user={relativeUser} />
+          <Dropdown key={relativeUser.id} user={relativeUser} getUsers={getUsers} />
         )
       })}
+      
     </div>
   )
 }
