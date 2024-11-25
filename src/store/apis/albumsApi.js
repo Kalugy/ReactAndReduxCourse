@@ -21,6 +21,7 @@ const albumsApi = createApi ({
                 }
             }),
             addAlbums: builder.mutation({
+                invalidatesTags: ['Album'],
                 query: (user) => {
                     return {
                         url: '/albums',
