@@ -6,8 +6,9 @@ import { car2Reducer, addNewCar, removeNewCar, changeSearchTerm } from "./slices
 import { formReducer, changeName, changeCost } from "./slices/carExample/formSlice";
 import { resetAll } from "./action";
 import { createUser, userReducer, setUser, createAlbum, setAlbum } from "./slices/UserSlice";
-import { usersReducer, addUser } from "./slices/userExample/UsersSlice";
-
+import { usersReducer } from "./slices/userExample/UsersSlice";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { albumsApi } from "./apis/albumsApi";
 
 const store = configureStore({
     reducer:{
@@ -17,10 +18,19 @@ const store = configureStore({
         cars2: car2Reducer,
         form: formReducer,
         users: userReducer,
-        usersexample: usersReducer
+        usersexample: usersReducer,
+        [albumsApi.reducerPath]: albumsApi.reducer
+    },
+    middleware: (getDefaultMiddleware) => {
+        return getDefaultMiddleware()
+            .concat(albumsApi.middleware)
     }
 })
 
+setupListeners(store.dispatch)
+
+//test
+//window.store = store
 
 // const startingState = store.getState()
 // console.log(startingState)
@@ -32,4 +42,7 @@ export { addNewCar, removeNewCar, changeSearchTerm }
 export { changeName, changeCost }
 export { resetAll }
 export { createUser , setUser, createAlbum, setAlbum}
-export { addUser }
+export * from './thunks/fetchUsers'
+export * from './thunks/postUsers'
+export * from './thunks/removeUsers'
+export { useFetchAlbumsQuery, useAddAlbumsMutation } from "./apis/albumsApi"

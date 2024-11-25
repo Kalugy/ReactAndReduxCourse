@@ -3,7 +3,7 @@ import UserList from './UserList'
 function UserReduxExample() {
 
   return (
-    <div className="h-screen bg-gray-800 text-white flex items-center justify-center">
+    <div className="min-h-screen w-full bg-gray-800 text-white pt-24">
       <UserList />
     </div>
   )

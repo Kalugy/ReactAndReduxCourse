@@ -64,7 +64,35 @@
       "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
     }
   ],
-  "users": [],
-  "albums": [],
+  "users": [
+    {
+      "id": "a2b6",
+      "name": "Shannon Grimes Jr."
+    },
+    {
+      "id": "31fa",
+      "name": "Robin Muller"
+    },
+    {
+      "id": "0c42",
+      "name": "Gina Powlowski"
+    },
+    {
+      "id": "93e3",
+      "name": "Lula Kuhic"
+    }
+  ],
+  "albums": [
+    {
+      "id": "test",
+      "name": "ff",
+      "userId": "a2b6"
+    },
+    {
+      "id": "a6d0",
+      "userId": "a2b6",
+      "name": "Electronic Bronze Chicken"
+    }
+  ],
   "photos": []
 }
