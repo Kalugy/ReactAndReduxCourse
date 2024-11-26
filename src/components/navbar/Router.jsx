@@ -25,6 +25,7 @@ import CarRedux from '../carRedux/carRedux';
 import CarRedux2 from '../carRedux2/carRedux2';
 import UserRedux from '../userRedux/userRedux';
 import UserReduxExample from '../userReduxExample/UserReduxExample';
+import TypeScript from '../typeScriptIntro/typeScript';
 
 const App = () => {
 
@@ -58,6 +59,8 @@ const App = () => {
         <Route path="/carreduxv2" element={<CarRedux2/>} />
         <Route path="/userredux" element={<UserRedux/>} />
         <Route path="/userreduxcourse" element={<UserReduxExample/>} />
+        <Route path="/typescript" element={<TypeScript/>} />
+
       </Routes>
     </Router>
   )

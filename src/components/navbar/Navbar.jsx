@@ -48,6 +48,9 @@ function Navbar() {
       <NavLink to='/userreduxcourse' className='mx-2'>
         UserReduxExample
       </NavLink>
+      <NavLink to='/typescript' className='mx-2'>
+        TypeScripIntro
+      </NavLink>
     </nav>
   )
 }

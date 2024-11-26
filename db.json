@@ -24,18 +24,22 @@
     {
       "id": "a05fbcfd-5683-4475-8653-e94f0270554d",
       "name": "Cicero29"
+    },
+    {
+      "id": "1360fd4d-5755-41fb-9fd7-b54b2d0bf3d4",
+      "name": "Trisha66",
+      "album": []
+    },
+    {
+      "id": "e2b7452d-3594-411e-9b18-54d53935e79f",
+      "name": "Renee_Homenick",
+      "album": []
     }
   ],
   "album": [
     {
       "id": "ee137e53-4850-41c4-aa7f-49d42f3d87dd",
       "title": "Do You Love Me?",
-      "images": [],
-      "userId": "a05fbcfd-5683-4475-8653-e94f0270554d"
-    },
-    {
-      "id": "860f367c-f49a-41ab-9324-697f06171d97",
-      "title": "Lonely Boy",
       "images": [],
       "userId": "a05fbcfd-5683-4475-8653-e94f0270554d"
     },
@@ -53,15 +57,16 @@
       "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
     },
     {
-      "id": "348c3bc6-b5e8-42e9-8671-cb5c4a3fe8fd",
-      "title": "I Can't Go For That (No Can Do)",
-      "images": [
-        "https://avatars.githubusercontent.com/u/20705462",
-        "https://avatars.githubusercontent.com/u/79775420",
-        "https://avatars.githubusercontent.com/u/1301479",
-        "https://avatars.githubusercontent.com/u/44434715"
-      ],
-      "userId": "370c0bf4-7580-49fc-8986-854fc2b3ee09"
+      "id": "e2df02ae-0af0-426e-b3c7-cff72c00fea5",
+      "title": "Strawberry Fields Forever",
+      "images": [],
+      "userId": "1360fd4d-5755-41fb-9fd7-b54b2d0bf3d4"
+    },
+    {
+      "id": "2bb61e2c-74c3-4065-9da9-ee54a016ad92",
+      "title": "I Can Help",
+      "images": [],
+      "userId": "1360fd4d-5755-41fb-9fd7-b54b2d0bf3d4"
     }
   ],
   "users": [
@@ -84,25 +89,86 @@
   ],
   "albums": [
     {
-      "id": "test",
-      "name": "ff",
-      "userId": "a2b6"
+      "id": "78dd",
+      "userId": "31fa",
+      "name": "Incredible Soft Hat"
     },
     {
-      "id": "a6d0",
+      "id": "b6c5",
       "userId": "a2b6",
-      "name": "Electronic Bronze Chicken"
+      "name": "Awesome Granite Bacon"
     },
     {
-      "id": "84c1",
-      "userId": "a2b6",
-      "name": "Oriental Frozen Table"
+      "id": "65a2",
+      "userId": "93e3",
+      "name": "Rustic Soft Chicken"
     },
     {
-      "id": "80b1",
-      "userId": "a2b6",
-      "name": "Sleek Concrete Mouse"
+      "id": "55ab",
+      "userId": "93e3",
+      "name": "Electronic Plastic Hat"
+    },
+    {
+      "id": "c28a",
+      "userId": "0c42",
+      "name": "Practical Cotton Mouse"
+    },
+    {
+      "id": "86ab",
+      "userId": "test",
+      "name": "Intelligent Concrete Towels"
+    },
+    {
+      "id": "6424",
+      "userId": "test",
+      "name": "Gorgeous Wooden Fish"
+    },
+    {
+      "id": "994e",
+      "userId": "test",
+      "name": "Oriental Wooden Towels"
+    },
+    {
+      "id": "2f79",
+      "userId": "test",
+      "name": "Luxurious Soft Bacon"
+    },
+    {
+      "id": "7431",
+      "userId": "test",
+      "name": "Bespoke Fresh Towels"
+    },
+    {
+      "id": "8894",
+      "userId": "test",
+      "name": "Recycled Metal Bike"
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "id": "7dcd",
+      "image": "https://avatars.githubusercontent.com/u/49864239",
+      "albumId": "b6c5"
+    },
+    {
+      "id": "6cc8",
+      "image": "https://avatars.githubusercontent.com/u/95893533",
+      "albumId": "b6c5"
+    },
+    {
+      "id": "0c7d",
+      "image": "https://avatars.githubusercontent.com/u/14957603",
+      "albumId": "b6c5"
+    },
+    {
+      "id": "fe73",
+      "image": "https://avatars.githubusercontent.com/u/23779678",
+      "albumId": "b6c5"
+    },
+    {
+      "id": "c119",
+      "image": "https://avatars.githubusercontent.com/u/74953855",
+      "albumId": "b6c5"
+    }
+  ]
 }
