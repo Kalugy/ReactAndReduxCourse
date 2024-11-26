@@ -1,4 +1,3 @@
-import { Value } from "classnames";
 import React from "react";
 
 interface ColorPickerProps {
