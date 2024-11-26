@@ -37,7 +37,7 @@ type User2 = {
     profile?: ProfileProp,
 }
 //type can not inherit or extents from another interaces
-type value =  string | number | string[]| Image
+type Value =  string | number | string[]| Image
 
 function logOut(value?: Value){
 
