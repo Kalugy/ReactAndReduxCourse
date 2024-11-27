@@ -18,35 +18,3 @@ function ColorPicker ({color, handleColor}:ColorPickerProps2){
 }
 
 <ColorPicker color={['red','blue']} handleColor={(color)=>console.log(color) }  ></ColorPicker>
-
-interface Image{
-    src: string
-}
-
-interface ProfileProp{
-    likes: string[]
-}
-
-interface User{
-    username: string,
-    profile?: ProfileProp,
-}
-type User2 = {
-    username: string,
-    profile?: ProfileProp,
-}
-//type can not inherit or extents from another interaces
-type Value =  string | number | string[]| Image
-
-function logOut(value?: Value){
-
-    if(typeof value === 'string'){
-        value.toUpperCase()
-    }
-
-
-}
-logOut('ff')
-logOut(123)
-logOut(['ff','fdfd'])
-logOut({src: 'test.png' } )
