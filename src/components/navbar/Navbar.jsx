@@ -51,6 +51,9 @@ function Navbar() {
       <NavLink to='/typescript' className='mx-2'>
         TypeScripIntro
       </NavLink>
+      <NavLink to='/registry' className='mx-2'>
+        AppRegistry
+      </NavLink>
     </nav>
   )
 }

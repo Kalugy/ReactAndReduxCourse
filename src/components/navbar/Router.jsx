@@ -26,6 +26,12 @@ import CarRedux2 from '../carRedux2/carRedux2';
 import UserRedux from '../userRedux/userRedux';
 import UserReduxExample from '../userReduxExample/UserReduxExample';
 import TypeScript from '../typeScriptIntro/typeScript';
+import AppRegistry from '../registryProject/AppRegistry';
+
+import HomePage from '../registryProject/pages/HomePage';
+import SearchPage from '../registryProject/pages/SearchPage';
+import DetailsPage from '../registryProject/pages/DetailsPage';
+import Root from '../registryProject/pages/Root';
 
 const App = () => {
 
@@ -60,7 +66,14 @@ const App = () => {
         <Route path="/userredux" element={<UserRedux/>} />
         <Route path="/userreduxcourse" element={<UserReduxExample/>} />
         <Route path="/typescript" element={<TypeScript/>} />
+        {/* <Route path="/registry" element={<AppRegistry/>} /> */}
+  
+        <Route path="/registry" element={<Root />}>
+          <Route index element={<HomePage />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="packages/:name" element={<DetailsPage />} />
 
+        </Route>
       </Routes>
     </Router>
   )
