@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage"
 import SearchPage from "./pages/SearchPage"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
+//never use it // just an example for router definitions
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -26,7 +28,6 @@ const router = createBrowserRouter([
   },
 ])
 
-//only on router so i made it with the other component this is just another example but is never used
 
 function AppRegistry() {
 
