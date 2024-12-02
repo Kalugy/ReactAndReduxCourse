@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput"
 function Header() {
 
     return (
-      <div className="p-20 flex flex-row justify-between ">
+      <div className="pt-20 flex flex-row justify-between ">
         <Link to="/registry">NPM Registry</Link>
         <SearchInput />
       </div>

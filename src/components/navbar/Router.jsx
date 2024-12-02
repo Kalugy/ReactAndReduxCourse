@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, BrowserRouter as Router, Route, Routes, RouterProvider } from 'react-router-dom';
 import Navbar from '../navbar/Navbar'
 import Home from '../home/Home'
 import Translate from '../translate/index'
@@ -26,57 +26,105 @@ import CarRedux2 from '../carRedux2/carRedux2';
 import UserRedux from '../userRedux/userRedux';
 import UserReduxExample from '../userReduxExample/UserReduxExample';
 import TypeScript from '../typeScriptIntro/typeScript';
-import AppRegistry from '../registryProject/AppRegistry';
 
 import HomePage from '../registryProject/pages/HomePage';
-import SearchPage from '../registryProject/pages/SearchPage';
+import SearchPage from '../registryProject/pages/Search/SearchPage';
+import SearchLoader from '../registryProject/pages/Search/SearchLoader'
 import DetailsPage from '../registryProject/pages/DetailsPage';
 import Root from '../registryProject/pages/Root';
+import MainRoot from './MainRoot'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainRoot />, // Navbar is now applied globally
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/translate", element: <Translate /> },
+      { path: "/profilecard", element: <ProfileCard /> },
+      { path: "/animal", element: <Animal /> },
+      { path: "/searchimg", element: <SearchImg /> },
+      { path: "/book", element: <Book /> },
+      { path: "/bookcontext", element: <BookContext /> },
+      { path: "/dropdown", element: <Accordeon /> },
+      { path: "/dropdown/accordeon", element: <Accordeon /> },
+      { path: "/dropdown/button/:id", element: <Button /> },
+      { path: "/dropdown/flex", element: <Flex /> },
+      { path: "/dropdown/table", element: <Tables /> },
+      { path: "/dropdown/search", element: <Search /> },
+      { path: "/dropdown/select", element: <Select /> },
+      { path: "/dropdown/modal", element: <Modal /> },
+      { path: "/dropdown/modalportal", element: <ModalPortal /> },
+      { path: "/dropdown/sortedtable", element: <SortableTable /> },
+      { path: "/dropdown/increment", element: <Increment /> },
+      { path: "/dropdown/incrementreducer", element: <IncrementReducer /> },
+      { path: "/customnav", element: <CustomNav /> },
+      { path: "/movieredux", element: <MovieRedux /> },
+      { path: "/carredux", element: <CarRedux /> },
+      { path: "/carreduxv2", element: <CarRedux2 /> },
+      { path: "/userredux", element: <UserRedux /> },
+      { path: "/userreduxcourse", element: <UserReduxExample /> },
+      { path: "/typescript", element: <TypeScript /> },
+      {
+        path: "/registry",
+        element: <Root />,
+        children: [
+          { index: true, element: <HomePage /> },
+          { path: "search", 
+            element: <SearchPage />, 
+            loader: SearchLoader,
+          },
+          { path: "packages/:name", element: <DetailsPage /> }
+        ]
+      }
+    ]
+  }
+]);
 
 const App = () => {
-
-  return (
-    <Router>
-      <Navbar/>
-
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/translate" element={<Translate/>} />
-        <Route path="/profilecard" element={<ProfileCard/>} />
-        <Route path="/animal" element={<Animal/>} />
-        <Route path="/searchimg" element={<SearchImg/>} />
-        <Route path="/book" element={<Book/>} />
-        <Route path="/bookcontext" element={<BookContext/>} />
-        <Route path="/dropdown" element={<Accordeon/>} />
-        <Route path="/dropdown/accordeon" element={<Accordeon/>} />
-        <Route path="/dropdown/button/:id" element={<Button/>} />
-        <Route path="/dropdown/flex" element={<Flex/>} />
-        <Route path="/dropdown/table" element={<Tables/>} />
-        <Route path="/dropdown/search" element={<Search/>} />
-        <Route path="/dropdown/select" element={<Select/>} />
-        <Route path="/dropdown/modal" element={<Modal/>} />
-        <Route path="/dropdown/modalportal" element={<ModalPortal/>} />
-        <Route path="/dropdown/sortedtable" element={<SortableTable/>} />
-        <Route path="/dropdown/increment" element={<Increment/>} />
-        <Route path="/dropdown/incrementreducer" element={<IncrementReducer/>} />
-        <Route path="/customnav" element={<CustomNav/>} />
-        <Route path="/movieredux" element={<MovieRedux/>} />
-        <Route path="/carredux" element={<CarRedux/>} />
-        <Route path="/carreduxv2" element={<CarRedux2/>} />
-        <Route path="/userredux" element={<UserRedux/>} />
-        <Route path="/userreduxcourse" element={<UserReduxExample/>} />
-        <Route path="/typescript" element={<TypeScript/>} />
-        {/* <Route path="/registry" element={<AppRegistry/>} /> */}
-  
-        <Route path="/registry" element={<Root />}>
-          <Route index element={<HomePage />} />
-          <Route path="search" element={<SearchPage />} />
-          <Route path="packages/:name" element={<DetailsPage />} />
-
-        </Route>
-      </Routes>
-    </Router>
-  )
+  return <RouterProvider router={router} ></RouterProvider>
 }
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <Navbar/>
+
+//       <Routes>
+//         <Route path="/" element={<Home/>} />
+//         <Route path="/translate" element={<Translate/>} />
+//         <Route path="/profilecard" element={<ProfileCard/>} />
+//         <Route path="/animal" element={<Animal/>} />
+//         <Route path="/searchimg" element={<SearchImg/>} />
+//         <Route path="/book" element={<Book/>} />
+//         <Route path="/bookcontext" element={<BookContext/>} />
+//         <Route path="/dropdown" element={<Accordeon/>} />
+//         <Route path="/dropdown/accordeon" element={<Accordeon/>} />
+//         <Route path="/dropdown/button/:id" element={<Button/>} />
+//         <Route path="/dropdown/flex" element={<Flex/>} />
+//         <Route path="/dropdown/table" element={<Tables/>} />
+//         <Route path="/dropdown/search" element={<Search/>} />
+//         <Route path="/dropdown/select" element={<Select/>} />
+//         <Route path="/dropdown/modal" element={<Modal/>} />
+//         <Route path="/dropdown/modalportal" element={<ModalPortal/>} />
+//         <Route path="/dropdown/sortedtable" element={<SortableTable/>} />
+//         <Route path="/dropdown/increment" element={<Increment/>} />
+//         <Route path="/dropdown/incrementreducer" element={<IncrementReducer/>} />
+//         <Route path="/customnav" element={<CustomNav/>} />
+//         <Route path="/movieredux" element={<MovieRedux/>} />
+//         <Route path="/carredux" element={<CarRedux/>} />
+//         <Route path="/carreduxv2" element={<CarRedux2/>} />
+//         <Route path="/userredux" element={<UserRedux/>} />
+//         <Route path="/userreduxcourse" element={<UserReduxExample/>} />
+//         <Route path="/typescript" element={<TypeScript/>} />
+//         <Route path="/registry" element={<Root />}>
+//           <Route index element={<HomePage />} />
+//           <Route path="search" element={<SearchPage />} />
+//           <Route path="packages/:name" element={<DetailsPage />} />
+//         </Route>
+//       </Routes>
+//     </Router>
+//   )
+// }
 
 export default App
