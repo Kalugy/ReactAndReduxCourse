@@ -6,7 +6,6 @@ import { fetchImages } from "../api/api"
 
 const BooksContext = createContext();
 
-
 const BookProvider = ({children}) => {
     const [book, setBook] = useState([])
 
@@ -14,7 +13,6 @@ const BookProvider = ({children}) => {
         const books = await getBooks();
         setBook(books);
     };
-
 
     const CreateBook = async (text) => {
         const data = await fetchImages(text);
