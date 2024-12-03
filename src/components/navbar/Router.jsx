@@ -27,12 +27,14 @@ import UserRedux from '../userRedux/userRedux';
 import UserReduxExample from '../userReduxExample/UserReduxExample';
 import TypeScript from '../typeScriptIntro/typeScript';
 
-import HomePage from '../registryProject/pages/HomePage';
+import HomePage from '../registryProject/pages/Home/HomePage';
 import SearchPage from '../registryProject/pages/Search/SearchPage';
 import SearchLoader from '../registryProject/pages/Search/SearchLoader'
-import DetailsPage from '../registryProject/pages/DetailsPage';
+import DetailsPage from '../registryProject/pages/Details/DetailsPage';
 import Root from '../registryProject/pages/Root';
 import MainRoot from './MainRoot'
+import detailsLoader from '../registryProject/pages/Details/DetailsLoader';
+import homeLoader from '../registryProject/pages/Home/homeLoader';
 
 const router = createBrowserRouter([
   {
@@ -69,12 +71,18 @@ const router = createBrowserRouter([
         path: "/registry",
         element: <Root />,
         children: [
-          { index: true, element: <HomePage /> },
+          { index: true, 
+            element: <HomePage />,
+            loader: homeLoader
+          },
           { path: "search", 
             element: <SearchPage />, 
             loader: SearchLoader,
           },
-          { path: "packages/:name", element: <DetailsPage /> }
+          { path: "packages/:name", 
+            element: <DetailsPage />,
+            loader: detailsLoader
+          }
         ]
       }
     ]

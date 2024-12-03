@@ -1,5 +1,3 @@
-import type { PackageSummary } from "../types/PackageSummary";
-
 
 interface searchResponse{
     objects: {
